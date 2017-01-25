@@ -6,6 +6,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {routing} from "./app.routing";
 import {MaterialModule, MdGridListModule} from "@angular/material";
+import 'hammerjs';
 import {NgModule} from "@angular/core";
 import {HomeComponent} from "./modules/home/home.component";
 import {AboutComponent} from "./modules/about/about.component";
