@@ -1,13 +1,14 @@
-<p>
-  Schedule List <br/>
-</p>
-<ul class="link">
-  <li><a [routerLink]="['/search/event']">Search an event</a></li>
-  <li><a [routerLink]="['/whatsnext']">What's Next ?</a></li>
-</ul>
-<div>
-	<div *ngFor="let schedule of schedules">
-		<img md-list-avatar src="" alt="?">
-		<h3 md-line> {{schedule}} </h3>
-	</div>
+<h1>
+  Schedule List
+</h1>
+<div class="action-links">
+  <md-card><a [routerLink]="['/search/event']">Search an event</a> <md-icon>trending_flat</md-icon></md-card>
+  <md-card><a [routerLink]="['/whatsnext']">What's Next ?</a> <md-icon>trending_flat</md-icon></md-card>
 </div>
+
+<!--<div>-->
+<!--<div *ngFor="let schedule of schedules">-->
+<!--<img md-list-avatar src="" alt="?">-->
+<!--<h3 md-line> {{schedule}} </h3>-->
+<!--</div>-->
+<!--</div>-->
