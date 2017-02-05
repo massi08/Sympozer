@@ -1,0 +1,6 @@
+<md-input placeholder="Search:" #searchBox id="search-box" (keyup)="search(searchBox.value)"></md-input>
+<div>
+  <div *ngFor="let person of personsFound" class="search-result" >
+    <a [routerLink]="['/person/'+person.name+'/'+person.id]">{{person.name}}</a>
+  </div>
+</div>
