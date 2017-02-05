@@ -29,7 +29,6 @@ export class PersonByNameComponent implements OnInit {
   }
 
   search(term: string): void {
-    //this.searchTerms.next(term);
     console.log(term);
     this.searchTerms.next(term);
     this.personsFound.length = 0;
@@ -41,7 +40,7 @@ export class PersonByNameComponent implements OnInit {
 
   findPerson(term: string): void{
     for(var key in this.persons){
-      if(this.persons[key].name.match(term)){
+      if(this.persons[key].name.toUpperCase().match(term.toUpperCase())){
         this.personsFound.push(this.persons[key]);
       }
     }

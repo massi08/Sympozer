@@ -32,18 +32,18 @@ import {EventByCategoryComponent} from "./modules/event-by-category/event-by-cat
 import {EventsByLocationComponent} from "./modules/events-by-location/events-by-location.component";
 import {EventComponent} from "./modules/event/event.component";
 import {ExternPublicationComponent} from "./modules/extern-publication/externpublication.component";
+import {PersonByNameComponent} from './modules/person-by-name/person-by-name.component';
 
 import {KeysPipe} from "./keys.pipe";
 import {DataLoaderService} from "./data-loader.service";
 import {DBLPDataLoaderService} from "./dblpdata-loader.service";
 import {LocalDAOService} from "./localdao.service";
 import {eventHelper} from "./eventHelper";
-import { Encoder } from  './lib/encoder';
+import {Encoder} from  './lib/encoder';
 import {Ng2Webstorage} from 'ng2-webstorage';
-import { AuthorByNameComponent } from './modules/author-by-name/author-by-name.component';
-import { PersonByNameComponent } from './modules/person-by-name/person-by-name.component';
 
-const routes:Routes = [];
+
+const routes: Routes = [];
 
 @NgModule({
     declarations: [
@@ -74,7 +74,6 @@ const routes:Routes = [];
         EventByCategoryComponent,
         ExternPublicationComponent,
         KeysPipe,
-        AuthorByNameComponent,
         PersonByNameComponent
     ],
     imports: [
