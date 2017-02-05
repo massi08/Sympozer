@@ -1,6 +1,8 @@
+<app-author-by-name></app-author-by-name>
 <p>
   Authors List <br />
 </p>
+<md-input placeholder="Author Name:" #searchBox id="search-box" (keyup)="search(searchBox.value)"></md-input>
 <md-list>
 	<md-list-item *ngFor="let author of authors | keys">
 		<img md-list-avatar src="" alt="?">

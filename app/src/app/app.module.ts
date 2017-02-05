@@ -40,6 +40,8 @@ import {LocalDAOService} from "./localdao.service";
 import {eventHelper} from "./eventHelper";
 import { Encoder } from  './lib/encoder';
 import {Ng2Webstorage} from 'ng2-webstorage';
+import { AuthorByNameComponent } from './modules/author-by-name/author-by-name.component';
+import { PersonByNameComponent } from './modules/person-by-name/person-by-name.component';
 
 const routes:Routes = [];
 
@@ -71,7 +73,9 @@ const routes:Routes = [];
         EventComponent,
         EventByCategoryComponent,
         ExternPublicationComponent,
-        KeysPipe
+        KeysPipe,
+        AuthorByNameComponent,
+        PersonByNameComponent
     ],
     imports: [
         BrowserModule,
