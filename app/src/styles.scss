@@ -21,7 +21,7 @@ h1 {
     margin: 20px 0;
     position: relative;
 
-    a {
+    a, input {
       position: relative;
       text-decoration: none;
       width: 100%;
@@ -29,6 +29,8 @@ h1 {
       color: $font-color-dark;
       padding: 24px;
       display: block;
+      border: none;
+      outline: none;
       z-index: 2;
     }
 
@@ -50,6 +52,26 @@ h1 {
       md-icon {
         color: $font-color-dark;
         left: 10px;
+      }
+    }
+  }
+
+  &.search-wrapper {
+    md-card {
+      box-shadow: $md-search-whiteframe;
+      border-radius: 2px;
+      margin-bottom: 0;
+
+      md-icon {
+        opacity: 0.5;
+        z-index: 3;
+      }
+
+      input {
+        height: 70px;
+        padding: 5px 40px;
+        font-size: 16px;
+        color: #434343;
       }
     }
   }
