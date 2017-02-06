@@ -7,6 +7,6 @@
 
 <div class="search-result-wrapper">
   <div *ngFor="let person of personsFound" class="search-result">
-    <a [routerLink]="['/person/'+person.name+'/'+person.id]">{{person.name}}</a>
+    <a [routerLink]="['/person/'+person.name+'/'+person.id]" [innerHTML]="person.name"></a>
   </div>
 </div>
