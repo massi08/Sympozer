@@ -46,14 +46,15 @@ export class PersonByNameComponent implements OnInit {
                 hasMatch = true;
                 let personClone = JSON.parse(JSON.stringify(this.persons[key]));
                 let lastIndex = match.index + term.length;
-                personClone.name = personClone.name.slice(0, match.index) + '<b>' + personClone.name.slice(match.index, lastIndex) + '</b>' + personClone.name.slice(lastIndex);
+                personClone.htmlName = personClone.name.slice(0, match.index) + '<b>' + personClone.name.slice(match.index, lastIndex) + '</b>' + personClone.name.slice(lastIndex);
                 this.personsFound.push(personClone);
             }
         }
         if (!hasMatch && term.trim() !== "") {
             let notFoundObject = {
-                name: "&laquo;<b>" + term + "</b>&raquo; not found.",
-                id: "none"
+                id: "#",
+                name: "#",
+                htmlName: "&laquo;<b>" + term + "</b>&raquo; not found."
             };
             this.personsFound.push(notFoundObject);
         }
