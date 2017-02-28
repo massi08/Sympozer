@@ -1,11 +1,11 @@
 <h1>Organizations List</h1>
 
-<app-autocomplete [items]="organizations"></app-autocomplete>
+<app-autocomplete [items]="organizations" [namespace]="'organization'"></app-autocomplete>
 
 <div class="action-links list-items" *ngFor="let organization of organizations | keys">
   <md-card>
     <md-icon md-list-avatar>account_balance</md-icon>
-    <a [routerLink]="['/organization/'+organization.value.name+'/'+organization.value.id]">{{organization.value.sanitizeName}}</a>
+    <a [routerLink]="['/organization/'+organization.value.name+'/'+organization.value.id]">{{organization.value.name}}</a>
   </md-card>
 </div>
 

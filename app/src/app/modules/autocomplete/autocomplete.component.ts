@@ -14,6 +14,7 @@ import {Subject} from "rxjs";
 })
 export class AutocompleteComponent implements OnInit {
     @Input() items: Object;
+    @Input() namespace;
     itemsFound = [];
     searchTerms = new Subject<string>();
     hasItem: boolean;
