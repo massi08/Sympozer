@@ -32,7 +32,7 @@ import {EventByCategoryComponent} from "./modules/event-by-category/event-by-cat
 import {EventsByLocationComponent} from "./modules/events-by-location/events-by-location.component";
 import {EventComponent} from "./modules/event/event.component";
 import {ExternPublicationComponent} from "./modules/extern-publication/externpublication.component";
-import {PersonByNameComponent} from './modules/person-by-name/person-by-name.component';
+import {AutocompleteComponent} from './modules/autocomplete/autocomplete.component';
 
 import {KeysPipe} from "./keys.pipe";
 import {DataLoaderService} from "./data-loader.service";
@@ -74,7 +74,7 @@ const routes: Routes = [];
         EventByCategoryComponent,
         ExternPublicationComponent,
         KeysPipe,
-        PersonByNameComponent
+        AutocompleteComponent
     ],
     imports: [
         BrowserModule,

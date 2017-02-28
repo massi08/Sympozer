@@ -1,6 +1,6 @@
 <h1>Persons</h1>
 
-<app-person-by-name></app-person-by-name>
+<app-autocomplete [items]="persons"></app-autocomplete>
 
 <div class="action-links list-items" *ngFor="let person of persons | keys">
   <md-card>
