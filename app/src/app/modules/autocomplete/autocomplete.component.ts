@@ -14,7 +14,7 @@ import {Subject} from "rxjs";
 })
 export class AutocompleteComponent implements OnInit {
     @Input() items: Object;
-    @Input() namespace;
+    @Input() namespace
     itemsFound = [];
     searchTerms = new Subject<string>();
     hasItem: boolean;
@@ -42,14 +42,25 @@ export class AutocompleteComponent implements OnInit {
 
     findItem(term: string): void {
         let isMatch = false;
+        let match;
+        let itemName;
+        let itemCloneName;
         for (var key in this.items) {
-            let match = this.items[key].name.toUpperCase().match(term.toUpperCase());
+            if (typeof this.items[key].name !== 'undefined')
+                itemName = this.items[key].name;
+            else
+                itemName = this.items[key].title;
+            match = itemName.toUpperCase().match(term.toUpperCase());
             if (match) {
                 isMatch = true;
                 this.hasItem = true;
                 let itemClone = JSON.parse(JSON.stringify(this.items[key]));
                 let lastIndex = match.index + term.length;
-                itemClone.htmlName = itemClone.name.slice(0, match.index) + '<b>' + itemClone.name.slice(match.index, lastIndex) + '</b>' + itemClone.name.slice(lastIndex);
+                if (typeof itemClone.name !== 'undefined')
+                    itemCloneName =  itemClone.name;
+                else
+                    itemCloneName =  itemClone.title;
+                itemClone.htmlName = itemCloneName.slice(0, match.index) + '<b>' + itemCloneName.slice(match.index, lastIndex) + '</b>' + itemCloneName.slice(lastIndex);
                 this.itemsFound.push(itemClone);
             }
         }
