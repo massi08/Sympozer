@@ -15,7 +15,7 @@
       <div class="element-time-header"> Starts at {{sched.time | date:'jm'}} </div>
       <md-list *ngFor="let scheduleObject of sched.array">
         <a [routerLink]="'/event/'+scheduleObject.name+'/'+ scheduleObject.id">
-          <div class="schedule-element">
+          <div class="schedule-element ">
             <h3 > {{scheduleObject.name}} </h3>
             <h3 > Lasts: {{scheduleObject.duration}} </h3>
             <h3> schedule</h3>
