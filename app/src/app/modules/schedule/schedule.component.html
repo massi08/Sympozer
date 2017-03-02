@@ -10,9 +10,9 @@
 </h1>
 <md-list>
   <md-list *ngFor="let schedule of schedules; trackBy: index ">
-    <div class="element-date-header">{{schedule.date}} </div>
+    <div class="element-date-header">{{schedule.date | date}} </div>
     <div *ngFor="let sched of schedule.array">
-      <div class="element-time-header"> Starts at {{sched.time}} </div>
+      <div class="element-time-header"> Starts at {{sched.time | date:'jm'}} </div>
       <md-list *ngFor="let scheduleObject of sched.array">
         <a [routerLink]="'/event/'+scheduleObject.name+'/'+ scheduleObject.id">
           <div class="schedule-element">

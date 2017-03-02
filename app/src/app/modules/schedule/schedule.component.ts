@@ -39,7 +39,7 @@ export class ScheduleComponent implements OnInit {
         var schedules = new Array()
         var j = 0, k = 0
         schedules[j] = {date: newDate, array: new Array()}
-        schedules[j].array[k] = {time: time, array: new Array()}
+        schedules[j].array[k] = {time: newDate, array: new Array()}
         for(var i = 0; i <this.schedule.length; i++){
             var sched = new Date(this.schedule[i].startsAt)
             var schedMonth = sched.getUTCMonth() + 1
@@ -61,7 +61,7 @@ export class ScheduleComponent implements OnInit {
                     scheduleStart.minutes = schedMinutes
                     scheduleStart.seconds = schedSeconds
                     time = schedHours + ":" + schedMinutes + ":" + schedSeconds
-                    schedules[j].array[k] = {time: time, array: new Array()}
+                    schedules[j].array[k] = {time: sched, array: new Array()}
                     schedules[j].array[k].array.push(this.schedule[i])
                 }
             }
@@ -78,7 +78,7 @@ export class ScheduleComponent implements OnInit {
                 newDate = schedYear + "/" + schedMonth + "/" + schedDay
                 time = schedHours + ":" + schedMinutes + ":" + schedSeconds
                 schedules[j] = {date: newDate, array: new Array()}
-                schedules[j].array[k] = {time: time, array: new Array()}
+                schedules[j].array[k] = {time: sched, array: new Array()}
 
                 schedules[j].array[k].array.push(this.schedule[i])
             }
