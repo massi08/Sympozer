@@ -15,9 +15,12 @@
 
 <md-card class="week-schedule">
   <div *ngFor="let schedule of schedules; trackBy: index ">
-    <div class="element-date-header">{{schedule.date | date}}</div>
+    <md-card class="element-date-header" (click)="toggleVisible(schedule)">
+      <span>{{schedule.date | date}}</span>
+      <md-icon class="show-event" [ngClass]="{'is-visible': schedule.visible}">chevron_right</md-icon>
+    </md-card>
 
-    <md-card>
+    <div class="day-events" *ngIf="schedule.visible">
       <div *ngFor="let sched of schedule.array">
         <div class="element-time-header"> Starts at {{sched.time | date:'jm'}}</div>
         <div *ngFor="let scheduleObject of sched.array">
@@ -27,11 +30,12 @@
                 <h3 class="event-name"> {{scheduleObject.name}} </h3>
                 <h3> Lasts: <span class="event-duration">{{scheduleObject.duration.slice(2)}} </span></h3>
               </div>
+              <md-icon>chevron_right</md-icon>
             </a>
           </md-card>
         </div>
       </div>
-    </md-card>
+    </div>
 
   </div>
 </md-card>

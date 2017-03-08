@@ -12,6 +12,7 @@ import {LocalDAOService} from  '../../localdao.service';
 export class ScheduleComponent implements OnInit {
     schedule;
     schedules;
+    test = false;
 
     constructor(private location: Location,
                 private route: ActivatedRoute,
@@ -29,6 +30,7 @@ export class ScheduleComponent implements OnInit {
         var year = dateObj.getUTCFullYear();
 
         var newDate = year + "/" + month + "/" + day;
+        var isVisible = false;
 
         var hours = dateObj.getHours();
         var minutes = dateObj.getMinutes();
@@ -39,7 +41,7 @@ export class ScheduleComponent implements OnInit {
         //La variable que l'on va retourner
         var schedules = new Array();
         var j = 0, k = 0;
-        schedules[j] = {date: newDate, array: new Array()};
+        schedules[j] = {date: newDate, visible: isVisible, array: new Array()};
         schedules[j].array[k] = {time: newDate, array: new Array()};
         for (var i = 0; i < this.schedule.length; i++) {
             var sched = new Date(this.schedule[i].startsAt);
@@ -91,5 +93,12 @@ export class ScheduleComponent implements OnInit {
         console.log("*****Scheds");
         console.log(schedules);
         this.schedules = schedules;
+    }
+
+    toggleVisible(schedule: Object) {
+        if(schedule.visible == false)
+            schedule.visible = true;
+        else
+            schedule.visible = false;
     }
 }
