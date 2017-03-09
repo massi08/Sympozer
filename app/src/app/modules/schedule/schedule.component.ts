@@ -80,7 +80,7 @@ export class ScheduleComponent implements OnInit {
                 scheduleStart.seconds = schedSeconds;
                 newDate = schedYear + "/" + schedMonth + "/" + schedDay;
                 time = schedHours + ":" + schedMinutes + ":" + schedSeconds;
-                schedules[j] = {date: newDate, array: new Array()};
+                schedules[j] = {date: newDate, visible: false, array: new Array()};
                 schedules[j].array[k] = {time: sched, array: new Array()};
 
                 schedules[j].array[k].array.push(this.schedule[i]);
