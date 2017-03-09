@@ -95,7 +95,7 @@ export class ScheduleComponent implements OnInit {
         this.schedules = schedules;
     }
 
-    toggleVisible(schedule: Object) {
+    toggleVisible(schedule) {
         if(schedule.visible == false)
             schedule.visible = true;
         else
