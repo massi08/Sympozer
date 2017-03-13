@@ -20,7 +20,7 @@
       <md-icon class="show-event" [ngClass]="{'is-visible': schedule.visible}">chevron_right</md-icon>
     </md-card>
 
-    <div class="day-events" *ngIf="schedule.visible">
+    <div class="day-events" *ngIf="schedule.visible" [@enterAnimation]="schedule.visible">
       <div *ngFor="let sched of schedule.array">
         <div class="element-time-header"> Starts at {{sched.time | date:'jm'}}</div>
         <div *ngFor="let scheduleObject of sched.array">

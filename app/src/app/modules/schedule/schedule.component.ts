@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, trigger, transition, style, animate} from '@angular/core';
 import {ActivatedRoute, Params}   from '@angular/router';
 import {Location}              from '@angular/common';
 import {LocalDAOService} from  '../../localdao.service';
@@ -7,7 +7,37 @@ import {LocalDAOService} from  '../../localdao.service';
 @Component({
     selector: 'schedule',
     templateUrl: 'schedule.component.html',
-    styleUrls: ['./schedule.component.scss']
+    styleUrls: ['./schedule.component.scss'],
+    animations: [
+        trigger(
+            'enterAnimation', [
+                transition(':enter', [
+                    style({
+                        height: '0',
+                        width: '0',
+                        opacity: '0'
+                    }),
+                    animate('300ms', style({
+                        height: '100%',
+                        width: '100%',
+                        opacity: '1'
+                    }))
+                ]),
+                transition(':leave', [
+                    style({
+                        height: '100%',
+                        width: '100%',
+                        opacity: '1'
+                    }),
+                    animate('300ms', style({
+                        width: '0',
+                        height: '0',
+                        opacity: '0'
+                    }))
+                ])
+            ]
+        )
+    ]
 })
 export class ScheduleComponent implements OnInit {
     schedule;
@@ -96,7 +126,7 @@ export class ScheduleComponent implements OnInit {
     }
 
     toggleVisible(schedule) {
-        if(schedule.visible == false)
+        if (schedule.visible == false)
             schedule.visible = true;
         else
             schedule.visible = false;
